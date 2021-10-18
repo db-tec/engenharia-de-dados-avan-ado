@@ -13,3 +13,8 @@ Resources:
         BlockPublicPolicy: True
         IgnorePublicAcls: True
         RestrictPublicBuckets: True
+      Tags:
+        - Key: exemplo
+          Value: Teste David Borges
+        - Key: owner
+          Value: data-engineering
