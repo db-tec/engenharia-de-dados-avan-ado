@@ -1,6 +1,6 @@
 Resources:
 
-  BucketBeliscoS3:
+  Bucket01:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: yvestec-bucket-eda
@@ -9,12 +9,33 @@ Resources:
           - ServerSideEncryptionByDefault:
               SSEAlgorithm: AES256
       PublicAccessBlockConfiguration:
-        BlockPublicAcls: True
-        BlockPublicPolicy: True
-        IgnorePublicAcls: True
+        BlockPublicAcls: False
+        BlockPublicPolicy: False
+        IgnorePublicAcls: False
         RestrictPublicBuckets: True
       Tags:
-        - Key: exemplo
-          Value: Teste David Borges
+        - Key: resources
+          Value: bucket
         - Key: owner
           Value: data-engineering
+
+  Bucket02:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: yvestec-bucket-eda/raw
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: False
+        BlockPublicPolicy: False
+        IgnorePublicAcls: False
+        RestrictPublicBuckets: True
+      Tags:
+        - Key: resources
+          Value: bucket
+        - Key: owner
+          Value: data-engineering
+        - Key: camada
+          Value: raw
