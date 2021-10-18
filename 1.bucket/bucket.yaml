@@ -1,0 +1,15 @@
+Resources:
+
+  BucketBeliscoS3:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: yvestec-bucket-eda
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: True
+        BlockPublicPolicy: True
+        IgnorePublicAcls: True
+        RestrictPublicBuckets: True
